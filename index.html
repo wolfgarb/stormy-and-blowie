@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="style" src="assets/style.css" />
+</head>
+
+<body>
+    <header class="jumbotron">
+        <h1 class="display-3">What's the weather?</h1>
+        <p class="lead">An easy and sleek weather app that delivers you weather information by location!</p> 
+        <p>Search for a city to find the current stats and 4-day forecast.</p>
+        <div></div>
+        <p>Current Time (EST):</p>
+        <p id="currentDay" class="lead"></p>
+    </header>
+
+    <main class="container col-8">
+        <form id="search-form">
+            <input class="w-100 col-10" aria-label="Search by city" id="search-bar" placeholder="Search by city...">
+            <button type="search" id="search-btn">Search</button>
+        </form>
+
+    <div id="current-forecast" class="container">
+        <!--  -->
+    </div>
+
+    <div id="future-forecast" class="container">
+        <!--  -->
+    </div>
+
+    </main>
+
+    <footer>
+        <p class="w-100 col-10 row">
+            Made by<a href="https://github.com/wolfgarb" target="_blank"> wolfgarb <i class="fas fa-external-link-alt"></i></a>
+        </p>
+    </footer>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script src="js/script.js"></script>
+
+</html>
