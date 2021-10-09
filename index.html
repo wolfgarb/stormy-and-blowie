@@ -11,9 +11,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic.min.css"
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="style" src="assets/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="assets\style.css" />
 </head>
 
 <body>
@@ -21,29 +20,43 @@
         <h1 class="display-3">What's the weather?</h1>
         <p class="lead">An easy and sleek weather app that delivers you weather information by location!</p> 
         <p>Search for a city to find the current stats and 4-day forecast.</p>
-        <div></div>
-        <p>Current Time (EST):</p>
-        <p id="currentDay" class="lead"></p>
+        <h4>Today is <span id="current-date"></span></h4>
     </header>
 
-    <main class="container col-8">
+    <main class="container">
         <form id="search-form">
-            <input class="w-100 col-10" aria-label="Search by city" id="search-bar" placeholder="Search by city...">
-            <button type="search" id="search-btn">Search</button>
+            <label for="search-bar" id="error"></label>
+            <input class="col-4" aria-label="Search by city" id="search-bar" placeholder="Search by city...">
+            <button type="search" id="search-btn" class="btn">Search</button>
         </form>
+        
+    <div class="alert alert-warning alert-dismissable fade" role="alert" id="error-msg"></div>
 
-    <div id="current-forecast" class="container">
+    <div id="search-history">
+        <h5>Recent searches:</h5>
+    </div>
+
+    <div id="results"></div>
+
+    <div id="current-forecast" class="card invisible">
+        <div id="img-container">
+            
+        </div>
         <!--  -->
     </div>
 
-    <div id="future-forecast" class="container">
-        <!--  -->
+    <div id="forecast-header" class="invisible">
+        <h4>4-day forecast</h4>
+    </div>
+
+    <div id="future-forecast" class="row">
+    <!--  -->
     </div>
 
     </main>
 
-    <footer>
-        <p class="w-100 col-10 row">
+    <footer class="footer fixed-bottom">
+        <p>
             Made by<a href="https://github.com/wolfgarb" target="_blank"> wolfgarb <i class="fas fa-external-link-alt"></i></a>
         </p>
     </footer>
@@ -51,6 +64,8 @@
 </body>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-<script src="js/script.js"></script>
+<script src="js\script.js"></script>
 
 </html>
+
+
