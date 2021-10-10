@@ -108,3 +108,18 @@ input {
   height: 40px;
 }
 
+.green {
+  background-color: #97dc90;
+}
+
+.yellow {
+  background-color: #f0f779;
+}
+
+.orange {
+  background-color: #f7b879;
+}
+
+.red {
+  background-color: #f27272;
+}
