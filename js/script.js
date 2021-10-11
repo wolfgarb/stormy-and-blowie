@@ -13,12 +13,9 @@ var forecastDate3 = moment().add(2, "days").format("MMM D");
 var forecastDate4 = moment().add(3, "days").format("MMM D");
 //
 var userInput = [];
-//
-var cityBtns = document.getElementsByClassName("city-btn");
 
 // FUNCTIONS
 
-// round numbers
 function roundNum(num) {
   return Math.floor(num);
 }
@@ -37,6 +34,7 @@ searchBtn.addEventListener("click", function (event) {
   else {
     updateStorage(searchQuery);
     getCityData(searchQuery);
+    loadHistoryBtns(searchQuery);
   }
 });
 
@@ -46,7 +44,6 @@ function updateStorage(searchQuery) {
 }
 
 function getCityData(searchQuery) {
-
     console.log(userInput);
 
   var cityData =
@@ -65,10 +62,8 @@ function getCityData(searchQuery) {
           localStorage.setItem("lat", data[0].lat);
           localStorage.setItem("lon", data[0].lon);
           console.log("City data for: " + data[0].name, data[0].state);
-          
           //when submit is clicked, text will persist
           $("#search-bar").textContent = data[0].name;
-
           // fetch weather data for city
           getWeatherData(data[0].name, data[0].state);
         }
@@ -111,7 +106,6 @@ function displayCurrent(weather, city, state) {
   imgContainer.textContent = "";
   $("#search-bar").val("");
   $("#current-forecast").removeClass("invisible");
-
   // SHOW CURRENT WEATHER FOR SEARCH QUERY
   var cityStateEl = document.createElement("h3");
   cityStateEl.textContent =
@@ -119,38 +113,31 @@ function displayCurrent(weather, city, state) {
   var timeStamp = document.createElement("p");
   timeStamp.textContent = "The current time is ";
   searchResultsEl.appendChild(cityStateEl);
-
   // IMG
   var currentImg = document.createElement("img");
   currentImg.setAttribute("src", "https://openweathermap.org/img/wn/" + weather.weather[0].icon + ".png");
   imgContainer.appendChild(currentImg);
   currentForecastEl.appendChild(imgContainer);
-
   // WEATHER HEADER
   var currentMainEl = document.createElement("h1");
   currentMainEl.textContent = weather.weather[0].main;
   currentForecastEl.appendChild(currentMainEl);
-
   // TEMP
   var currentTempEl = document.createElement("h4");
   currentTempEl.textContent = "Temp: " + roundNum(weather.temp) + "\u00B0 F";
   currentForecastEl.appendChild(currentTempEl);
-
   // FEEL
   var currentFeelEl = document.createElement("h4");
   currentFeelEl.textContent =
     "Feels like: " + roundNum(weather.feels_like) + "\u00B0 F";
   currentForecastEl.appendChild(currentFeelEl);
-
   // HUMIDITY
   var currentHumidEl = document.createElement("h4");
   currentHumidEl.textContent = "Humidity: " + weather.humidity + "%";
   currentForecastEl.appendChild(currentHumidEl);
-
   // UVI
   var currentUviEl = document.createElement("h4");
   currentUviEl.textContent = "UV Index: " + weather.uvi;
-  
   // add color classes
   if (weather.uvi <= 2) {
       currentUviEl.classList = "green"
@@ -213,7 +200,7 @@ function loadHistoryBtns(queries) {
       // create history buttons
       var newBtn = document.createElement("button");
       newBtn.textContent = queries[i];
-      newBtn.classList = "btn city-btn";
+      newBtn.classList = "btn";
       // newBtn.setAttribute("id", searchQuery)
       searchHistory.appendChild(newBtn);
     }
@@ -221,3 +208,9 @@ function loadHistoryBtns(queries) {
 };
 
 loadHistoryBtns();
+
+$(".btn").on("click", function() {
+  var searchQuery = $(this).text();
+  console.log(searchQuery);
+  getCityData(searchQuery)
+})
