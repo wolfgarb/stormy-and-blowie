@@ -9,7 +9,7 @@ In honor of the local Kansas City weather man Gary Lezak, my repo is in honor of
 
 ## Preview
 Here is a mock-up of how the page looks and functions.
-<img src=""></img>
+<img src="assets\images\weather-app.gif"></img>
 
 ## Created With
 * JavaScript
@@ -20,7 +20,7 @@ Here is a mock-up of how the page looks and functions.
 * CSS
 
 ### This project focused on Third-party API's 
-
+Information on the page was all dynamically created based on data that was fetched. Thanks to OpenWeather for the use of a free, dependable API. 
 
 Feedback and advice to improve my code is always welcome, thanks for looking!
 
