@@ -11,14 +11,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="assets\style.css" />
 </head>
 
 <body>
     <header class="jumbotron">
         <h1 class="display-3">What's the weather?</h1>
-        <p class="lead">An easy and sleek weather app that delivers you weather information by location!</p> 
+        <p class="lead">A weather app that delivers information by location.</p>
         <p>Search for a city to find the current stats and 4-day forecast.</p>
         <h4>Today is <span id="current-date"></span></h4>
     </header>
@@ -29,35 +30,36 @@
             <input class="col-4" aria-label="Search by city" id="search-bar" placeholder="Search by city...">
             <button type="search" id="search-btn" class="btn">Search</button>
         </form>
-        
-    <div class="alert alert-warning alert-dismissable fade" role="alert" id="error-msg"></div>
 
-    <div id="search-history">
-        <h5>Recent searches:</h5>
-    </div>
+        <div class="alert alert-warning alert-dismissable fade" role="alert" id="error-msg"></div>
 
-    <div id="results"></div>
-
-    <div id="current-forecast" class="card invisible">
-        <div id="img-container">
-            
+        <div id="search-history">
+            <h5>Recent searches:</h5>
         </div>
-        <!--  -->
-    </div>
 
-    <div id="forecast-header" class="invisible">
-        <h4>4-day forecast</h4>
-    </div>
+        <div id="results"></div>
 
-    <div id="future-forecast" class="row">
-    <!--  -->
-    </div>
+        <div id="current-forecast" class="card invisible">
+            <div id="img-container">
+
+            </div>
+            <!--  -->
+        </div>
+
+        <div id="forecast-header" class="invisible">
+            <h4>4-day forecast</h4>
+        </div>
+
+        <div id="future-forecast" class="row">
+            <!--  -->
+        </div>
 
     </main>
 
     <footer class="footer fixed-bottom">
         <p>
-            Made by<a href="https://github.com/wolfgarb" target="_blank"> wolfgarb <i class="fas fa-external-link-alt"></i></a>
+            Made by<a href="https://github.com/wolfgarb" target="_blank"> wolfgarb <i
+                    class="fas fa-external-link-alt"></i></a>
         </p>
     </footer>
 
@@ -67,5 +69,3 @@
 <script src="js\script.js"></script>
 
 </html>
-
-
